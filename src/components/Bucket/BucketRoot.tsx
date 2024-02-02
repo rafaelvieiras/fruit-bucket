@@ -4,5 +4,9 @@ interface BucketRootComponentProps {
   children: ReactNode;
 }
 export function BucketRootComponent({ children }: BucketRootComponentProps) {
-  return <div>{children}</div>;
+  return (
+    <div className="flex flex-col bg-slate-200 shadow-sm rounded-sm p-4">
+      {children}
+    </div>
+  );
 }

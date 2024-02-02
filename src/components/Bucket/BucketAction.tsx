@@ -9,7 +9,7 @@ export function BucketActionComponent({
   ...rest
 }: BucketActionProps) {
   return (
-    <button {...rest}>
+    <button className="btn btn-circle btn-outline" {...rest}>
       <Icon />
     </button>
   );

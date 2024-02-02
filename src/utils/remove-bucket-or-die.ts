@@ -1,4 +1,4 @@
-import { IBucket } from "../interfaces/bucket-interface";
+import { IBucket } from "@/interfaces/bucket-interface";
 
 export function removeBucketOrDie(
   id: string,

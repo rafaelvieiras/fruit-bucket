@@ -5,5 +5,9 @@ interface FormActionProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function FormActionComponent({ children, ...rest }: FormActionProps) {
-  return <button {...rest}>{children}</button>;
+  return (
+    <button className={`btn valid:btn-success`} {...rest}>
+      {children}
+    </button>
+  );
 }

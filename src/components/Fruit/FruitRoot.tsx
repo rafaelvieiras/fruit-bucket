@@ -5,5 +5,9 @@ interface FruitRootComponentProps {
 }
 
 export function FruitRootComponent({ children }: FruitRootComponentProps) {
-  return <div>{children}</div>;
+  return (
+    <div className="flex flex-col min-w-[45%] border shadow-md gap-3 p-3 bg-slate-100">
+      {children}
+    </div>
+  );
 }

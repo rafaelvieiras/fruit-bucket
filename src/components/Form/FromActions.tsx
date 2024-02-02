@@ -1,9 +1,13 @@
-import { ReactNode } from "react";
+import { HtmlHTMLAttributes, ReactNode } from "react";
 
-interface FormActionsProps {
+interface FormActionsProps extends HtmlHTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-export function FormActionsComponent({ children }: FormActionsProps) {
-  return <div>{children}</div>;
+export function FormActionsComponent({ children, ...rest }: FormActionsProps) {
+  return (
+    <div className={`flex flex-row-reverse p-4 ${rest.className}`}>
+      {children}
+    </div>
+  );
 }

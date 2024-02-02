@@ -13,9 +13,23 @@ export const FormInputComponent = forwardRef(function FormInputComponent(
   const { label, fieldError, ...rest } = props;
   return (
     <>
-      <label>{label}</label>
-      <input ref={ref} {...rest} />
-      {fieldError && <span>{fieldError.message}</span>}
+      <label className="form-control">
+        <div className="label">
+          <span className="label-text">{label}</span>
+        </div>
+        <input
+          className={`input input-bordered w-full ${
+            !fieldError || "input-error"
+          }`}
+          ref={ref}
+          {...rest}
+        />
+        <div className="label">
+          {fieldError && (
+            <span className="label-text-alt">{fieldError.message}</span>
+          )}
+        </div>
+      </label>
     </>
   );
 });

@@ -1,41 +1,43 @@
-import { IBucket } from "../interfaces/bucket-interface";
-import { IFruit } from "../interfaces/fruit-interface";
+import { IApplicationState } from "@/interfaces/application-state-interface";
+import { IBucket } from "@/interfaces/bucket-interface";
+import { IFruit } from "@/interfaces/fruit-interface";
+import { canAddFruitToBucket } from "@/utils/can-add-fruit-to-bucket";
 interface IAddFruitToBucketOrDieProps {
-  bucketId: string;
-  buckets: IBucket[];
-  fruit?: IFruit;
-  fruits: IFruit[];
+  bucket: IBucket;
+  fruit: IFruit;
+  state: IApplicationState;
 }
 
 export function addFruitToBucketOrDie({
-  bucketId,
-  buckets,
+  bucket,
   fruit,
-  fruits,
-}: IAddFruitToBucketOrDieProps) {
+  state,
+}: IAddFruitToBucketOrDieProps): { buckets: IBucket[]; fruits: IFruit[] } {
   if (!fruit) {
     throw new Error(`Fruit not found`);
   }
-  const bucket = buckets.find((bucket) => bucket.id === bucketId);
+
   if (!bucket) {
-    throw new Error(`Bucket with id ${bucketId} not found`);
-  }
-  const totalOfFruitsOnBucket = bucket?.fruits.length || 0;
-
-  if (totalOfFruitsOnBucket >= bucket.maxCapacity) {
-    throw new Error(`Bucket with id ${bucketId} is full`);
+    throw new Error(`Bucket not found`);
   }
 
-  bucket.fruits.push(fruit);
-
-  const fruitIndex = fruits.findIndex((f) => f.id === fruit.id);
-
-  if (fruitIndex !== -1) {
-    fruits.splice(fruitIndex, 1);
+  if (!canAddFruitToBucket(bucket)) {
+    throw new Error(`Bucket is full`);
   }
+
+  const previousBucket = state.buckets.find(
+    (b) => b.id === fruit.allocatedBucketId
+  );
+
+  if (previousBucket) {
+    previousBucket.fruits = previousBucket.fruits.filter((f) => f !== fruit.id);
+  }
+
+  bucket.fruits.push(fruit.id);
+  fruit.allocatedBucketId = bucket.id;
 
   return {
-    buckets,
-    fruits,
+    buckets: state.buckets.map((b) => (b.id === bucket.id ? bucket : b)),
+    fruits: state.fruits.map((f) => (f.id === fruit.id ? fruit : f)),
   };
 }

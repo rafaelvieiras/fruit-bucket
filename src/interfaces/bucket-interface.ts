@@ -1,8 +1,8 @@
-import { IFruit } from "./fruit-interface";
-
 export interface IBucket {
   id: string;
+  index: number;
+  name?: string;
   maxCapacity: number;
   currentValue?: number;
-  fruits: IFruit[];
+  fruits: string[];
 }

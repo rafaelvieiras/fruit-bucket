@@ -4,5 +4,5 @@ interface FruitPriceProps {
 }
 
 export function FruitPriceComponent({ children }: FruitPriceProps) {
-  return <div>{children}</div>;
+  return <div className="badge">{children}</div>;
 }
