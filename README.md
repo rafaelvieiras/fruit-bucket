@@ -1,6 +1,6 @@
 # Fruit Bucket 🍎🍌🍇
 
-[Português](https://github.com/rafaelvieiras/fruit-bucket/master/README.pt-BR.md)
+[Português](https://github.com/rafaelvieiras/fruit-bucket/blob/master/README.pt-BR.md)
 
 ## A Study in React
 
