@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Fruit Bucket 🍎🍌🍇
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Português](https://github.com/rafaelvieiras/fruit-bucket/master/README.pt-BR.md)
 
-Currently, two official plugins are available:
+## A Study in React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Welcome to "Fruit Bucket," a project that showcases my journey with React. This application is designed to manage fruit buckets in an intuitive and user-friendly interface.
 
-## Expanding the ESLint configuration
+### 🚀 Demo
+Check out the live demo [here](https://fruit-bucket.vercel.app/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 🛠️ Technologies Used
+- **Framework:** React with Vite
+- **Styling:** Tailwind CSS with DaisyUI components for rapid UI development
+- **State Management:** Zustand for an intuitive state management experience
+- **Forms:** React Hook Form with Zod for form handling and validation
+- **Language:** TypeScript for enhanced code reliability and developer productivity
+- **Package Manager:** pnpm
+- **Node Version:** 20
 
-- Configure the top-level `parserOptions` property like this:
+### 🌟 Features
+- Create and manage buckets of fruits with ease.
+- Utilize a modern, responsive UI for an optimal user experience across all devices.
+- Data persistence for your fruit buckets, ensuring no loss of data between sessions.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### 📦 Installation
+To run this project locally, follow these steps:
+1. Ensure you have Node 20 installed.
+2. Clone the repository.
+3. Install dependencies using `pnpm install`.
+4. Run the project with `pnpm dev`.
+(You can use `yard` or `npm` too, but, I can't garantee operation)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 🤝 Contributing
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/rafaelvieiras/fruit-bucket/issues).
+
+### 💖 Support
+Your support is appreciated! Give a ⭐️ if this project helped you or if you liked it!
+
+### 🔗 Links
+- **Project Demo:** [https://fruit-bucket.vercel.app/](https://fruit-bucket.vercel.app/)
+- **GitHub Repo:** [https://github.com/rafaelvieiras/fruit-bucket](https://github.com/rafaelvieiras/fruit-bucket)
